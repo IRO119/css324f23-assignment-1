@@ -3,6 +3,7 @@ import utils
 import ucs
 
 goal_node, n_visits = ucs.uniform_cost_graph_search(problem)
+print("STARTING...")
 if goal_node is not None:
     print("Solution")
     print("========")
@@ -12,3 +13,4 @@ if goal_node is not None:
     print("Number of Visited States = %d" % n_visits)
 else:
     print("No solutions found")
+print("ENDING...")
