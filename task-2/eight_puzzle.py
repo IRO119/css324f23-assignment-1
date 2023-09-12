@@ -37,7 +37,7 @@ def move_blank(s, new_r, new_c):
     return (tuple(new_board), new_r, new_c)
 
 
-def h3(s):
+def h1(s):
     goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)
     board, _, _ = s
     res = 0
@@ -50,13 +50,32 @@ def h3(s):
     return res
 
 
-def h1(s):
+def h3(s):
     # implement this function
-    print(s)
-    res = 0
-    goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)
     board, _, _ = s
+    total = 0
+    # this for loop looks to see if the board at a certain index is within the row target
     for idx in range(1, 9):
-        if goal[idx] != board[idx]:
-            res += 1
-    return 0
+        if idx < 4:
+            if (board[idx] != 1 or board[idx] != 2 or board[idx] != 3):
+                total += 1
+        elif idx < 7:
+            if (board[idx] != 4 or board[idx] != 5 or board[idx] != 6):
+                total += 1
+        else:
+            if (board[idx] != 7 or board[idx] != 8 or board[idx] != 0):
+                total += 1
+
+    # this for loop looks to see if the board at a certain index is within the column target
+    for idx in range(1, 9):
+        if idx < 4:
+            if (board[idx] != 1 or board[idx] != 4 or board[idx] != 7):
+                total += 1
+        elif idx < 7:
+            if (board[idx] != 2 or board[idx] != 5 or board[idx] != 8):
+                total += 1
+        else:
+            if (board[idx] != 3 or board[idx] != 6 or board[idx] != 0):
+                total += 1
+
+    return total
