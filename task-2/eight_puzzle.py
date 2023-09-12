@@ -36,7 +36,8 @@ def move_blank(s, new_r, new_c):
     new_board[new_r*3 + new_c] = 0
     return (tuple(new_board), new_r, new_c)
 
-def h1(s):
+
+def h3(s):
     goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)
     board, _, _ = s
     res = 0
@@ -48,7 +49,14 @@ def h1(s):
             res += 1
     return res
 
-def h3(s):
+
+def h1(s):
     # implement this function
+    print(s)
+    res = 0
+    goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)
     board, _, _ = s
+    for idx in range(1, 9):
+        if goal[idx] != board[idx]:
+            res += 1
     return 0
